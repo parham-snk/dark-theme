@@ -1,0 +1,101 @@
+<%- include("./includes/header.ejs")  %>
+<div id="hero">
+    <div class="box">
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicin</h1>
+      <div class="inputBox">
+        <input type="text"><button><i class="bi bi-search"></i></button>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div id="icons">
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+      <div class="icon"></div>
+    </div>
+    <div id="space">
+      <h1>
+        what is The <span style="color: var(--importantColor);font-weight: normal;">Benefiets</span> for you?
+      </h1>
+    </div>
+    <h1>Benefiets</h1>
+    <div id="benefits">
+      <div class="box">
+        <i class="bi bi-speedometer2"></i>
+        <div class="caption">
+          <h1>too <span>fast</span> !</h1>
+          <p>
+            so suiteable and fast for <span>rendering</span> and <span>uploadin</span> for best <span>performance</span>!
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <i class="bi bi-intersect"></i>
+        <div class="caption">
+          <div class="caption">
+            <h1><span>interacting</span> !</h1>
+            <p>
+              interact with your <span>workmates</span>!its makes <span>easy</span> works!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <i class="bi bi-calendar-day-fill"></i>
+        <div class="caption">
+          <div class="caption">
+            <h1><span>freeTimes</span> !</h1>
+            <p>
+              you have <span>free time</span> for <span>yourself</span>!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <i class="bi bi-compass"></i>
+        <div class="caption">
+          <div class="caption">
+            <h1>work <span>anyWhere</span> !</h1>
+            <p>
+              work anyWhere from <span>any country</span> without <span>any limit</span>!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+
+<script>
+  let pageY, lastPageY;
+  window.onmousemove = (e) => {
+    let rotateY, rotateX, x, y;
+
+
+    rotateY = ((window.innerWidth / 2) - e.screenX) / 100
+
+    rotateX = ((window.innerHeight / 2)) - e.screenY / 30
+
+
+    document.querySelector("#hero").querySelector(".box").style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+    // document.querySelector("#hero").querySelector(".box").style.transform = `skew(${rotateY}deg,${rotateX}deg)`;
+  }
+
+
+  window.onscroll = () => {
+    pageY = pageYOffset
+    if (pageY > lastPageY) {
+      return document.querySelector('nav').style.top = -100+"%"
+    } else {
+
+      return document.querySelector('nav').style.top = 0 
+    }
+  }
+  window.addEventListener("scrollend", (e) => {
+    lastPageY = pageYOffset
+  })
+</script>
+
+</html>
